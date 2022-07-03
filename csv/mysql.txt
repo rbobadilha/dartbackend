@@ -1,0 +1,19 @@
+sudo mysql_secure_installation
+
+# Acessar MySql
+mysql -u root -p
+
+# Criar usuário para acesso local definindo privilégios
+CREATE USER 'admin'@'localhost'
+  IDENTIFIED BY 'password';
+GRANT ALL
+  ON *.*
+  TO 'admin'@'localhost';
+
+# Criar usuário para acesdo de qualquer local definindo privilégios
+CREATE USER 'admin'@'%'
+  IDENTIFIED BY 'password';
+GRANT ALL
+  ON *.*
+  TO 'admin'@'l%';
+
